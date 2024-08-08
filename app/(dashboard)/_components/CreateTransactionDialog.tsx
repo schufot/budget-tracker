@@ -101,7 +101,6 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                     <FormLabel>Category</FormLabel>
                     <FormControl>
                       <CategoryPicker type={type}></CategoryPicker>
-                      <Input defaultValue={0} type="number" {...field}></Input>
                     </FormControl>
                     <FormDescription>
                       Select a category for this transaction
