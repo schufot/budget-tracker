@@ -1,9 +1,10 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { UserButton } from "@clerk/nextjs";
-import { Link } from "lucide-react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import { ThemeSwitcherBtn } from "./ThemeSwitcherBtn";
 import { buttonVariants } from "./ui/button";
 
 function Navbar() {
@@ -26,10 +27,15 @@ function DesktopNavbar() {
       <nav className="container flex items-center justify-between px-8">
         <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
           <Logo />
-          <div className="flex h-full"></div>
-          {items.map((item) => (
-            <NavbarItem key={item.label} link={item.link} label={item.label} />
-          ))}
+          <div className="flex h-full">
+            {items.map((item) => (
+              <NavbarItem
+                key={item.label}
+                link={item.link}
+                label={item.label}
+              />
+            ))}
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <ThemeSwitcherBtn />
@@ -62,7 +68,5 @@ function NavbarItem({ link, label }: { link: string; label: string }) {
     </div>
   );
 }
-
-//ab 21:16min https://www.youtube.com/watch?v=nANLXwxZxks
 
 export default Navbar;
