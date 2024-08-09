@@ -42,11 +42,7 @@ export async function CreateTransaction(form: CreateTransactionSchemaType){
             },
         }),
 
-
-
-    ]);
-
-    // Update month aggregate table
+        // Update month aggregate table
     prisma.monthHistory.upsert({
         where: {
             day_month_year_userId: {
@@ -72,8 +68,8 @@ export async function CreateTransaction(form: CreateTransactionSchemaType){
             income: {
                 increment: type === "income" ? amount : 0,
             },
-        }
-    })
+        },
+    }),
 
     // Update year aggregate table
     prisma.yearHistory.upsert({
@@ -101,5 +97,9 @@ export async function CreateTransaction(form: CreateTransactionSchemaType){
             },
         }
     })
+
+    ]);
+
+    
 
 }
