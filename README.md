@@ -11,7 +11,6 @@ A tracker for your incomes and expenses with a yearly and monthly overview.
 - CSV export
 - Manage section to delete and create categories
 - Change currency
-- Change between light and dark mode
 
 ## Technologies Used
 
